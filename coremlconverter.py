@@ -1,3 +1,5 @@
+# Reference: https://www.pyimagesearch.com/2018/04/23/running-keras-models-on-ios-with-coreml/
+
 from keras.models import load_model
 import coremltools
 import argparse
@@ -25,8 +27,8 @@ coreml_model = coremltools.converters.keras.convert(
     image_input_names="image",
     image_scale=1/255.0,
     class_labels=class_labels,
-    is_bgr=True # for if your model was trained with bgr instead of RGB
-)
+    is_bgr=True)
+
 
 output = args["model"].rsplit(".", 1)[0] + ".mlmodel"
 print("[INFO] saving model as {}".format(output))
