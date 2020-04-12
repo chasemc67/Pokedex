@@ -1,8 +1,12 @@
+# Reference: https://www.pyimagesearch.com/2018/04/09/how-to-quickly-build-a-deep-learning-image-dataset/
+
 from requests import exceptions
 import argparse
 import requests
 import cv2
 import os
+
+from pathlib import Path
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-q", '--query', required=True, help="Seach query for Bing Image API")
@@ -37,6 +41,9 @@ print("[INFO] {} total results for '{}'".format(estNumResults, term))
 
 # initialize the total number of images downloaded thus far
 total = 0
+
+# Create dir to output
+os.makedirs(args["output"], exist_ok=True)
 
 # loop over the estimated number of results in `GROUP_SIZE` groups
 for offset in range(0, estNumResults, GROUP_SIZE):
