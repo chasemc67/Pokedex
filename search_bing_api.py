@@ -9,7 +9,8 @@ ap.add_argument("-q", '--query', required=True, help="Seach query for Bing Image
 ap.add_argument("-o", "--output", required=True, help="Path to output directory")
 args = vars(ap.parse_args())
 
-API_KEY = "API KEY HERE"
+with open('apiKey.txt', 'r') as apiKeyFile:
+    API_KEY = apiKeyFile.read()
 MAX_RESULTS = 250
 GROUP_SIZE = 50
 
