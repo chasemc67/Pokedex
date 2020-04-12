@@ -1,3 +1,5 @@
+# Reference: https://pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/
+
 # import the necessary packages
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
