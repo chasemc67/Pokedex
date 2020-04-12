@@ -7,6 +7,5 @@ a dataset for training
 and put it in a file called `apiKey.txt`
 
 ### Usage: 
-`mkdir dataset/charmander`
 `python search_bing_api.py --query "charmander" --output dataset/charmander`
 
